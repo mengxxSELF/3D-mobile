@@ -1,31 +1,31 @@
-// Ò³Ãæ»¬¶¯   Ä§·½ ½øĞĞĞı×ª
-// ĞèÒªÅĞ¶Ï»¬¶¯µÄ¾àÀë Ô½´óĞı×ªµÄÔ½´ó
+// é¡µé¢æ»‘åŠ¨   é­”æ–¹ è¿›è¡Œæ—‹è½¬
+// éœ€è¦åˆ¤æ–­æ»‘åŠ¨çš„è·ç¦» è¶Šå¤§æ—‹è½¬çš„è¶Šå¤§
 
-// Çå³ıä¯ÀÀÆ÷×Ô´øÄ¬ÈÏÊÂ¼ş ÔÚ»¬¶¯Ê±ºòµÄÄ¬ÈÏĞĞÎª
+// æ¸…é™¤æµè§ˆå™¨è‡ªå¸¦é»˜è®¤äº‹ä»¶ åœ¨æ»‘åŠ¨æ—¶å€™çš„é»˜è®¤è¡Œä¸º
 $(document).add($('img')).on('touchmove', function (e) {
     e.preventDefault();
-    //  ×èÖ¹ä¯ÀÀÆ÷Ä¬ÈÏ ÒÔ¼°   // Í¼Æ¬»¬¶¯µÄÄ¬ÈÏÊÂ¼ş »áÓĞĞéÓ°
+    //  é˜»æ­¢æµè§ˆå™¨é»˜è®¤ ä»¥åŠ   // å›¾ç‰‡æ»‘åŠ¨çš„é»˜è®¤äº‹ä»¶ ä¼šæœ‰è™šå½±
 });
 
 
 var cube = (function () {
-    var $cube = $('.cubeBox'); // Ä§·½ºĞ×Ó
+    var $cube = $('.cubeBox'); // é­”æ–¹ç›’å­
     function touchstart (e){
         var point = e.changedTouches[0];
-        //¼ÇÂ¼ÆğÊ¼×ø±êÖµ
+        //è®°å½•èµ·å§‹åæ ‡å€¼
         $cube.attr({
-            strX:point.pageX, // ÊÖÖ¸´¥µãX
+            strX:point.pageX, // æ‰‹æŒ‡è§¦ç‚¹X
             strY:point.pageY,
-            isMove:false, // ÊÇ·ñÒÆ¶¯
+            isMove:false, // æ˜¯å¦ç§»åŠ¨
             chengeX:0,
             chengeY:0
         });
 
     }
     function touchmove (e){
-        /* »ñÈ¡×îĞÂµÄÆ«ÒÆÖµ*/
+        /* è·å–æœ€æ–°çš„åç§»å€¼*/
         var point = e.changedTouches[0];
-        // ±£³Ö10pxµÄÎó´¥Îó²î
+        // ä¿æŒ10pxçš„è¯¯è§¦è¯¯å·®
         $cube.attr({
             chengeX:point.pageX- parseInt($cube.attr('strX')),
             chengeY:point.pageY- parseInt($cube.attr('strY')),
@@ -36,34 +36,34 @@ var cube = (function () {
             })
         }
 
-        //    Í¨¹ıattr»ñÈ¡µÄÊÇ×Ö·û´®
+        //    é€šè¿‡attrè·å–çš„æ˜¯å­—ç¬¦ä¸²
 
 
     }
     function touchend (e){
-        // ÊÖÖ¸Àë¿ª ¸ù¾İÊÇ·ñÒÆ¶¯ ½øĞĞĞı×ª
-        var isMove =  $cube.attr('isMove'); // ÕâÀïµÃµ½µÄÊÇ×Ö·û´®  ²»ÊÇ²¼¶ûÖµ ĞèÒª×¢Òâ
-        if(isMove=='false') return; // ²»ÒÆ¶¯ Ôò²»·¢ÉúĞĞÎª
-        // ×óÓÒ»¬¶¯ ¿ØÖÆµÄÑØ×ÅyÖáĞı×ª  ¸Ö¹ÜÎè
-        // ÉÏÏÂ»¬¶¯ ¿ØÖÆµÄÑØ×ÅxÖáĞı×ª  ÒÕÊõÌå²Ù
+        // æ‰‹æŒ‡ç¦»å¼€ æ ¹æ®æ˜¯å¦ç§»åŠ¨ è¿›è¡Œæ—‹è½¬
+        var isMove =  $cube.attr('isMove'); // è¿™é‡Œå¾—åˆ°çš„æ˜¯å­—ç¬¦ä¸²  ä¸æ˜¯å¸ƒå°”å€¼ éœ€è¦æ³¨æ„
+        if(isMove=='false') return; // ä¸ç§»åŠ¨ åˆ™ä¸å‘ç”Ÿè¡Œä¸º
+        // å·¦å³æ»‘åŠ¨ æ§åˆ¶çš„æ²¿ç€yè½´æ—‹è½¬  é’¢ç®¡èˆ
+        // ä¸Šä¸‹æ»‘åŠ¨ æ§åˆ¶çš„æ²¿ç€xè½´æ—‹è½¬  è‰ºæœ¯ä½“æ“
 
-        /* ÓĞÒ»¸öĞı×ª½Ç¶ÈºÜ´óµÄÎÊÌâ °´ÕÕ±ÈÀı»¬¶¯*/
+        /* æœ‰ä¸€ä¸ªæ—‹è½¬è§’åº¦å¾ˆå¤§çš„é—®é¢˜ æŒ‰ç…§æ¯”ä¾‹æ»‘åŠ¨*/
         var rotateX = parseInt( $cube.attr('rotateX') ),
             rotateY = parseInt( $cube.attr('rotateY')),
             chengeX = parseInt( $cube.attr('chengeX')),
             chengeY = parseInt( $cube.attr('chengeY'));
 
-        /* ÔÚÔ­À´µÄ»ù´¡ÉÏ ½øĞĞĞı×ª */
+        /* åœ¨åŸæ¥çš„åŸºç¡€ä¸Š è¿›è¡Œæ—‹è½¬ */
         $cube.css('transform','scale(0.6) rotateX('+(rotateX+chengeX)+'deg) rotateY('+(rotateY+chengeY)+'deg)');
 
-        /* µ±Ğı×ª½Ç¶È³¬¹ı360 ÓëÔ­ÓĞµÄĞı×ª·½ÏòÏà·´*/
+        /* å½“æ—‹è½¬è§’åº¦è¶…è¿‡360 ä¸åŸæœ‰çš„æ—‹è½¬æ–¹å‘ç›¸å*/
 
 
     }
 
     return {
         init: function () {
-            // Ä§·½ºĞ×ÓµÄÆğÊ¼µÄĞı×ª½Ç¶È
+            // é­”æ–¹ç›’å­çš„èµ·å§‹çš„æ—‹è½¬è§’åº¦
             $cube.attr({
                 rotateX:30,
                 rotateY:-45
