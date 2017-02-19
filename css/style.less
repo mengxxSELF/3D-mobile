@@ -1,0 +1,84 @@
+.size(@w,@h:@w){width:@w;height:@h};
+
+
+html{
+  font-size: 100px;
+}
+
+html,body{
+  .size(100%,100%);
+  overflow: hidden;
+}
+
+.main{
+  position: relative;
+  .size(100%,100%);
+  max-width: 640px; background: url("../img/zf_cubeBg.jpg") no-repeat center ;
+  background-size: cover;
+  /* 3d效果*/
+  perspective: 2000px;
+
+
+}
+.box{
+  position: absolute; left: 50%; top: 50%;
+  .size(5.1rem);
+  margin-left: -2.55rem;
+  margin-top: -2.55rem;
+
+  /* 3d*/
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+
+  /* 3d给盒子一个初始角度 看到其余的面*/
+  -webkit-transform: scale(0.6) rotateX(30deg) rotateY(-45deg);
+  transform: scale(0.6) rotateX(30deg) rotateY(-45deg);
+
+
+
+}
+li{
+  position: absolute; left: 0; top: 0;
+  .size(100%,100%);
+  img{
+    .size(100%,100%);
+  }
+}
+
+@boxS:2.55rem; // 需要移动的距离
+@box-S:-2.55rem; // 需要移动的距离
+
+
+.box {
+  /* Z方向向前    */
+  li:nth-child(1) {
+    -webkit-transform: translateZ(2.55rem);
+    transform: translateZ(2.55rem);
+  }
+  /* Z 向后 Y轴旋转90deg */
+  li:nth-child(2) {
+    -webkit-transform: translateZ(@box-S) rotateY(180deg);
+    transform: translateZ(@box-S) rotateY(180deg);
+  }
+  /* X 负方向 移动   Y轴旋转 90*/
+  li:nth-child(3) {
+    -webkit-transform: translateX(@box-S) rotateY(-90deg);
+    transform: translateX(@box-S) rotateY(-90deg);
+  }
+  /* X 正方向 移动   Y轴旋转 90*/
+  li:nth-child(4) {
+    -webkit-transform: translateX(@boxS) rotateY(90deg);
+    transform: translateX(@boxS) rotateY(90deg);
+  }
+
+  /* Y 正方向 移动   X轴旋转 90*/
+  li:nth-child(5) {
+    -webkit-transform: translateY(@boxS) rotateX(-90deg);
+    transform: translateY(@boxS) rotateX(-90deg);
+  }
+  /* Y 负方向 移动   X轴旋转 90*/
+  li:nth-child(6) {
+    -webkit-transform: translateY(@box-S) rotateX(90deg);
+    transform: translateY(@box-S) rotateX(90deg);
+  }
+}

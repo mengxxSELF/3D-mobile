@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <title>移动端3D魔方展示</title>
+    <link charset="utf-8" rel="stylesheet" href="css/reset.min.css"/>
+    <link charset="utf-8" rel="stylesheet/less" href="css/style.less"/>
+    <script>
+        (function () {
+            var desW = 640;
+            var winW =document.documentElement.clientWidth;
+            if(winW>desW){
+                return;
+            }else{
+                document.documentElement.style.fontSize = winW/desW*100+'px';
+            }
+        })()
+    </script>
+</head>
+<body>
+
+<div class="main">
+    <ul class="box">
+        <li><img src="img/zf_cube1.png" alt="移动端3D魔方展示"/></li>
+        <li><img src="img/zf_cube2.png" alt="移动端3D魔方展示"/></li>
+        <li><img src="img/zf_cube3.png" alt="移动端3D魔方展示"/></li>
+        <li><img src="img/zf_cube4.png" alt="移动端3D魔方展示"/></li>
+        <li><img src="img/zf_cube5.png" alt="移动端3D魔方展示"/></li>
+        <li><img src="img/zf_cube6.png" alt="移动端3D魔方展示"/></li>
+    </ul>
+</div>
+
+<script src="js/zepto.min.js"></script>
+<script>
+    var less = {
+        env:"development",/*在开发环境下*/
+        poll:1000,/*在监视模式下，查看代码的间隔时间*/
+    }
+</script>
+<script src="js/less-2.5.3.min.js"></script>
+<script>
+    less.watch();//启动监视模式
+</script>
+</body>
+</html>
