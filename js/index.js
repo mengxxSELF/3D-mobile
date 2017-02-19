@@ -10,7 +10,6 @@ var cubeRender = (function () {
     var $cubeBox = $('.cubeBox');
 
     function touchStart(e) {
-        console.log(e)
         /*记录起始的坐标值*/
         var point = e.changedTouches[0];
         $cubeBox.attr({

@@ -86,5 +86,44 @@ html, body {
 }
 
 
+/* 音频处理 */
+.music{
+  width: 0.6rem;
+  height: 0.6rem;
+  position: absolute;
+  right: 0.2rem;
+  top: 0.2rem;
+  z-index: 111;
+  background: url(../audio/music.svg) no-repeat;
+  background-size: 100% 100%;
 
 
+
+}
+
+.musicPlay{
+  -webkit-animation:playing 1s infinite linear both;
+  animation:playing 1s infinite linear both;
+}
+
+@-webkit-keyframes playing {
+  0%{
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100%{
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes playing {
+  0%{
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100%{
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
