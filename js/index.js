@@ -12,6 +12,7 @@ var cube = (function () {
     var $cube = $('.cubeBox'); // 魔方盒子
     function touchstart (e){
         var point = e.changedTouches[0];
+        console.log(point);
         //记录起始坐标值
         $cube.attr({
             strX:point.pageX, // 手指触点X
