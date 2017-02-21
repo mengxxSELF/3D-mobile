@@ -54,6 +54,7 @@ html, body {
   height: 100%;
 }
 
+
 /*3D->移动每一个面*/
 .cubeBox li:nth-child(1) {
   -webkit-transform: translateZ(2.55rem);
@@ -96,9 +97,7 @@ html, body {
   z-index: 111;
   background: url(../audio/music.svg) no-repeat;
   background-size: 100% 100%;
-
-
-
+  opacity:0;
 }
 
 .musicPlay{
@@ -127,3 +126,5 @@ html, body {
     transform: rotate(360deg);
   }
 }
+
+

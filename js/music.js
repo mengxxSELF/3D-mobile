@@ -8,9 +8,10 @@ var musicRender =(function () {
         init: function () {
             $audio.on('canplay', function () {
                 this.play();
+                $music.addClass('musicPlay').css({opacity:1});
             });
 /* 点击播放 暂停 */
-            $music.click(function () {
+            $music.tap(function () {
                 if(oAudio.paused){
                     oAudio.play();
                 }else{
